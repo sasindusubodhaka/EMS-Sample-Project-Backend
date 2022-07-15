@@ -26,6 +26,7 @@ public class DepartmentService {
 
     public List<Department> getDeptList() {
         List<Department> departmentList = departmentRepository.findAll();
+//        departmentList.forEach(n->System.out.printf(n.getName()));
         return departmentList;
     }
 }

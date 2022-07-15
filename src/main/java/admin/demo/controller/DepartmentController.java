@@ -25,9 +25,11 @@ public class DepartmentController {
         return new ResponseEntity<>(departmentService.addDepartment(department), HttpStatus.OK);
     }
 
-    @GetMapping("/getdeptList")
+    @GetMapping("/getDeptList")
     public List<Department> getDeptList() throws DepartmentCollectionException {
-        return departmentService.getDeptList();
+        List<Department> departmentList = departmentService.getDeptList();
+        departmentList.forEach(n->System.out.printf(n.getName()));
+        return departmentList;
     }
 
 }
